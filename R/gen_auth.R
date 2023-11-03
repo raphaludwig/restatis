@@ -16,10 +16,7 @@
 #' @return Path to the RDS file in which credentials are saved, invisibly.
 #'
 #' @export
-gen_auth_save <- function() {
-  username <- gen_auth_ask("username")
-  password <- gen_auth_ask("password")
-
+gen_auth_save <- function(username, password) {
   auth_path <- gen_auth_path("auth.rds")
 
   key <- httr2::secret_make_key()
